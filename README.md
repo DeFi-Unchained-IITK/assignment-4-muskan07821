@@ -1,36 +1,66 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/OftNXt_U)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=15314135&assignment_repo_type=AssignmentRepo)
-# Assignment 04 
+## Foundry
 
-In this assignment, you have to implememnt ERC 721 protocol for NFTs. You have to implement all these functions :
+**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-    
-  ## Solidity Function Declarations
+Foundry consists of:
 
-```solidity
-function balanceOf(address _owner) external view returns (uint256);
-function ownerOf(uint256 _tokenId) external view returns (address);
-function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;
-function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;
-function transferFrom(address _from, address _to, uint256 _tokenId) external payable;
-function approve(address _approved, uint256 _tokenId) external payable;
-function setApprovalForAll(address _operator, bool _approved) external;
-function getApproved(uint256 _tokenId) external view returns (address);
-function isApprovedForAll(address _owner, address _operator) external view returns (bool);
+-   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
+-   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+-   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
+-   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+
+## Documentation
+
+https://book.getfoundry.sh/
+
+## Usage
+
+### Build
+
+```shell
+$ forge build
 ```
-Also you have to use the following events : 
 
-```solidity
-    event Transfer(address indexed _from, address indexed _to, uint256 indexed _tokenId);
-    event Approval(address indexed _owner, address indexed _approved, uint256 indexed _tokenId);
-    event ApprovalForAll(address indexed _owner, address indexed _operator, bool _approved);
+### Test
+
+```shell
+$ forge test
 ```
-Make a basic test file of these functions performing unit tests.
 
-You have to code in VS code. Clone your repository using VS code, ensure that the cloned repository is in the main branch. Make the changes and push the file in your github repo after
-committing the changes.
+### Format
 
+```shell
+$ forge fmt
+```
 
-    
+### Gas Snapshots
 
-    
+```shell
+$ forge snapshot
+```
+
+### Anvil
+
+```shell
+$ anvil
+```
+
+### Deploy
+
+```shell
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+
+### Cast
+
+```shell
+$ cast <subcommand>
+```
+
+### Help
+
+```shell
+$ forge --help
+$ anvil --help
+$ cast --help
+```
